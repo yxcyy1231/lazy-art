@@ -1023,7 +1023,7 @@ export default function AdminPage() {
                   {/* 報名時間 */}
 
                   <p className="mt-6 border-t border-[#EEE7E2] pt-4 text-xs text-slate-400">
-                    報名時間：
+                    名時間：
                     {new Date(
                       item.created_at
                     ).toLocaleString("zh-TW")}
