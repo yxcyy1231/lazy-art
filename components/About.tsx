@@ -8,15 +8,15 @@ export default function About() {
 
         <div className="text-center">
 
-          <p className="text-amber-500 font-semibold tracking-widest uppercase">
+          <p className="text-amber-500 font-semibold tracking-widest uppercase text-sm md:text-base">
             About Lazy Art
           </p>
 
-       <h2 className="mt-6 text-6xl font-black text-[#8B1E2D]">
-  懶得畫室 <span className="text-[#8B1E2D]">Lazy Art</span>
-</h2>
+          <h2 className="mt-6 text-3xl md:text-6xl font-black text-[#8B1E2D]">
+            懶得畫室 <span className="text-[#8B1E2D]">Lazy Art</span>
+          </h2>
 
-       <p className="mt-8 text-xl text-slate-600 leading-10 max-w-5xl mx-auto">
+          <p className="mt-8 text-base md:text-xl text-slate-600 leading-8 md:leading-10 max-w-5xl mx-auto">
 
             懶得畫室相信，美術不是只有畫得漂亮，而是在創作中找到自信、
             享受表達、感受生活。
