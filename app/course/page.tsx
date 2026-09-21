@@ -141,6 +141,10 @@ const [polaroid, setPolaroid] = useState(false);
             </p>
           </div>
         </section>
+                {/* 分隔線：課程介紹 / 常態課程 */}
+        <div className="mx-auto max-w-4xl px-6">
+          <div className="h-px bg-[#E8E0DA]" />
+        </div>
 
         {/* ========================================
             常態課程入口
