@@ -126,7 +126,8 @@ const [polaroid, setPolaroid] = useState(false);
         {/* ========================================
             頁面標題
         ======================================== */}
-        <section className="mx-auto max-w-7xl px-6 pb-10 pt-20">
+        <div className="bg-white pt-20 md:pt-24">
+          <section className="mx-auto max-w-7xl px-6 pb-10 pt-20">
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#8B1E2D]">
               LAZY ART
@@ -141,6 +142,7 @@ const [polaroid, setPolaroid] = useState(false);
             </p>
           </div>
         </section>
+        </div>
                 {/* 分隔線：課程介紹 / 常態課程 */}
         <div className="mx-auto max-w-4xl px-6">
           <div className="h-px bg-[#E8E0DA]" />
