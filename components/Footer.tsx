@@ -3,7 +3,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#8B1E2D] text-white py-8">
-      <div className="max-w-4xl mx-auto px-6 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+      <div className="max-w-5xl mx-auto px-6 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
 
         <div className="text-center md:text-left">
           <h3 className="text-xl font-bold">Lazy Art 懶得畫室</h3>
