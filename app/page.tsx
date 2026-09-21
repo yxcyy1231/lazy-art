@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroBanner from "@/components/HeroBanner";
-import About from "@/components/About";
+import HomeAbout from "@/components/HomeAbout";
 import HomeCourseSection from "@/components/HomeCourseSection";
 import Footer from "@/components/Footer";
 
@@ -12,7 +12,7 @@ export default function Home() {
       <main className="overflow-x-hidden pt-20 md:pt-24">
         <HeroBanner />
 
-        <About />
+        <HomeAbout />
 
         {/* 分隔線 */}
         <div className="bg-[#FAF8F5] pt-16">
