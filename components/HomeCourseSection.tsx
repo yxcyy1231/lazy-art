@@ -2,6 +2,7 @@ import Link from "next/link";
 import { createClient } from "@supabase/supabase-js";
 import ClayCarousel from "./ClayCarousel";
 import WatercolorCarousel from "./WatercolorCarousel";
+import CourseCarousel from "./CourseCarousel";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -14,6 +15,7 @@ type Course = {
   title: string;
   subtitle: string;
   description: string;
+  cover: string | null;
   price: number | null;
   sort_order: number | null;
 };
@@ -27,6 +29,7 @@ export default async function HomeCourseSection() {
       title,
       subtitle,
       description,
+      cover,
       price,
       sort_order
     `)
@@ -187,6 +190,16 @@ export default async function HomeCourseSection() {
                     ========================= */}
                     {course.title === "暑末水彩漫漫" && (
                       <WatercolorCarousel />
+                    )}
+
+                    {/* =========================
+                        海洋生物黏土磁鐵照片
+                    ========================= */}
+                    {course.slug === "clay" && course.cover && (
+                      <CourseCarousel
+                        images={[course.cover]}
+                        alt={course.title}
+                      />
                     )}
 
                     <p className="mx-auto mt-8 max-w-2xl text-lg leading-9 text-slate-600">
