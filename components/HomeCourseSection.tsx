@@ -92,7 +92,7 @@ export default async function HomeCourseSection() {
             </p>
 
             <h2 className="mt-3 text-4xl font-black text-slate-900 md:text-5xl">
-              🍰 甜點黏土
+              🍰 秋季限定甜點黏土
             </h2>
 
             <ClayCarousel />
