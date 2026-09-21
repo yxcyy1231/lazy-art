@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroBanner from "@/components/HeroBanner";
+import About from "@/components/About";
 import HomeCourseSection from "@/components/HomeCourseSection";
 import Footer from "@/components/Footer";
 
@@ -10,6 +11,13 @@ export default function Home() {
 
       <main className="overflow-x-hidden pt-20 md:pt-24">
         <HeroBanner />
+
+        <About />
+
+        {/* 分隔線 */}
+        <div className="bg-[#FAF8F5] pt-16">
+          <div className="mx-auto max-w-3xl border-t border-[#E7E0D8]" />
+        </div>
 
         <HomeCourseSection />
 
