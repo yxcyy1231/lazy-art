@@ -239,7 +239,7 @@ async function handleRegularSubmit() {
     <>
       <Navbar />
 
-      <main className="min-h-screen bg-[#FAF8F5]">
+      <main className="min-h-screen bg-[#FAF8F5] pt-20 md:pt-24">
         <section className="mx-auto max-w-6xl px-6 py-20">
 
           {/* 標題 */}
