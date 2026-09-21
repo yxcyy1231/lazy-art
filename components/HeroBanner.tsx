@@ -66,10 +66,10 @@ export default function HeroBanner() {
               className="absolute inset-0 h-full w-full object-cover"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
+            <div className="absolute inset-0 bg-black/40 md:bg-transparent md:bg-gradient-to-r md:from-black/60 md:via-black/30 md:to-transparent" />
 
-            <div className="relative mx-auto flex h-full max-w-6xl items-center px-6 md:px-16">
-              <div className="max-w-xl text-white">
+            <div className="relative mx-auto flex h-full max-w-6xl items-center px-14 md:px-16">
+              <div className="w-full max-w-xl text-center text-white md:text-left">
                 <p className="text-xs font-semibold tracking-[0.25em] text-white/80 md:text-sm">
                   {slide.label}
                 </p>
