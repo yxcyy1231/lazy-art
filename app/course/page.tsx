@@ -122,7 +122,7 @@ const [polaroid, setPolaroid] = useState(false);
     <>
       <Navbar />
 
-      <main className="min-h-screen bg-[#FAF8F5] pt-20 md:pt-24">
+      <main className="min-h-screen bg-[#FAF8F5]">
         {/* ========================================
             頁面標題
         ======================================== */}
