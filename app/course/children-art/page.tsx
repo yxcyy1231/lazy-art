@@ -12,7 +12,7 @@ export default function ChildrenArtPage() {
 
           {/* 返回 */}
           <Link
-            href="/course"
+            href="/course-intro"
             className="mb-10 inline-flex items-center gap-2 font-semibold text-[#8B1E2D] hover:underline"
           >
             ← 返回所有課程
@@ -134,7 +134,7 @@ export default function ChildrenArtPage() {
             </Link>
 
             <Link
-              href="/course"
+              href="/course-intro"
               className="rounded-full border border-slate-300 px-8 py-4 font-semibold text-slate-700 transition hover:bg-white"
             >
               返回課程介紹
