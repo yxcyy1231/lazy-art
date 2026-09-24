@@ -2,7 +2,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export default function ChildrenArtPage() {
+export default function ChildrenartPage() {
   return (
     <>
       <Navbar />
@@ -77,16 +77,14 @@ export default function ChildrenArtPage() {
               課程方案
             </p>
 
-            <div className="mt-6 space-y-4">
+            <div className="mt-6 divide-y divide-[#EFE5DE]">
 
-              <div className="rounded-2xl border border-[#E4DDD8] p-5">
-                <div className="flex items-center justify-between">
-                  <p className="font-bold text-slate-900">單堂</p>
-                  <p className="text-xl font-black text-[#8B1E2D]">NT$700</p>
-                </div>
+              <div className="flex items-center justify-between py-4">
+                <p className="font-bold text-slate-900">單堂</p>
+                <p className="text-xl font-black text-[#8B1E2D]">NT$700</p>
               </div>
 
-              <div className="rounded-2xl border border-[#E4DDD8] p-5">
+              <div className="py-4">
                 <div className="flex items-center justify-between">
                   <p className="font-bold text-slate-900">12 堂方案</p>
                   <p className="text-xl font-black text-[#8B1E2D]">NT$7,700</p>
@@ -97,7 +95,7 @@ export default function ChildrenArtPage() {
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-[#E4DDD8] p-5">
+              <div className="py-4">
                 <div className="flex items-center justify-between">
                   <p className="font-bold text-slate-900">18 堂方案</p>
                   <p className="text-xl font-black text-[#8B1E2D]">NT$11,200</p>
