@@ -48,22 +48,22 @@ export default function CoursePage() {
     {
       title: "漫畫",
       href: "/course/comics",
-      ready: false,
+      ready: true,
     },
     {
       title: "升學",
       href: "/course/exam-prep",
-      ready: false,
+      ready: true,
     },
     {
       title: "黏土",
       href: "/course/clay-class",
-      ready: false,
+      ready: true,
     },
     {
       title: "素描",
       href: "/course/sketch",
-      ready: false,
+      ready: true,
     },
   ];
 
