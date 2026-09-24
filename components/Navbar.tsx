@@ -42,6 +42,10 @@ export default function Navbar() {
   課程介紹
 </Link>
 
+          <Link href="/course" className="transition hover:text-[#8B1E2D]">
+            立即報名
+          </Link>
+
           <Link href="/teachers" className="transition hover:text-[#8B1E2D]">
             師資介紹
           </Link>
@@ -85,6 +89,14 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
             >
               課程介紹
+            </Link>
+
+            <Link
+              href="/course"
+              className="px-6 py-4 hover:bg-gray-50"
+              onClick={() => setMenuOpen(false)}
+            >
+              立即報名
             </Link>
 
             <Link
