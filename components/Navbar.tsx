@@ -38,7 +38,7 @@ export default function Navbar() {
             關於畫室
           </Link>
 
-         <Link href="/course" className="transition hover:text-[#8B1E2D]">
+         <Link href="/course-intro" className="transition hover:text-[#8B1E2D]">
   課程介紹
 </Link>
 
@@ -84,7 +84,7 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="/course"
+              href="/course-intro"
               className="px-6 py-4 hover:bg-gray-50"
               onClick={() => setMenuOpen(false)}
             >
