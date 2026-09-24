@@ -209,7 +209,7 @@ async function handleRegularSubmit() {
       body: JSON.stringify({
         email,
         parentName: name,
-        courseTitle: selectedClass.title,
+        courseName: selectedClass.title,
         scheduleTitle: planText,
         scheduleTime: scheduleText,
         price: selectedClass.price,
@@ -609,7 +609,7 @@ async function handleRegularSubmit() {
       </p>
 
       <a
-        href="https://lin.ee/"
+        href="https://lin.ee/sQ3gXXg"
         target="_blank"
         rel="noopener noreferrer"
         className="mt-4 inline-block rounded-full bg-[#8B1E2D] px-6 py-3 font-bold text-white transition hover:opacity-80"
@@ -623,6 +623,85 @@ async function handleRegularSubmit() {
     報名完成後，我們將透過官方 LINE 與您確認付款方式、保留名額及課程通知。
   </p>
 </div>
+  </div>
+)}
+
+{submitted && selectedClass && (
+  <div className="mt-8 rounded-[24px] border border-[#DCEFE1] bg-[#F3FBF5] p-6 text-center md:p-10">
+    <p className="text-4xl">🎉</p>
+
+    <h3 className="mt-4 text-2xl font-black text-slate-900">
+      報名成功！
+    </h3>
+
+    <p className="mt-3 text-slate-600">
+      我們已收到「{selectedClass.title}」
+      （{selectedClass.day_of_week}・
+      {selectedClass.start_time}–{selectedClass.end_time}）
+      的報名資料。
+    </p>
+
+    <div className="mx-auto mt-6 max-w-sm rounded-2xl bg-white p-5 text-left shadow-sm">
+      <div className="flex items-center justify-between text-sm text-slate-500">
+        <span>方案</span>
+
+        <span className="font-semibold text-slate-800">
+          {selectedPlan === "12"
+            ? "買 11 堂送 1 堂"
+            : selectedPlan === "14"
+            ? "買 12 堂送 2 堂"
+            : "單堂報名"}
+        </span>
+      </div>
+
+      <div className="mt-3 flex items-center justify-between text-sm text-slate-500">
+        <span>應付金額</span>
+
+        <span className="font-black text-[#8B1E2D]">
+          NT$
+          {Number(
+            selectedPlan === "12"
+              ? selectedClass.price * 11
+              : selectedPlan === "14"
+              ? selectedClass.price * 12
+              : selectedClass.price
+          ).toLocaleString("zh-TW")}
+        </span>
+      </div>
+    </div>
+
+    <p className="mt-6 text-sm leading-7 text-slate-500">
+      請加入官方 LINE 完成匯款，我們將為您保留名額。
+    </p>
+
+    <a
+      href="https://lin.ee/sQ3gXXg"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="mt-5 inline-block rounded-full bg-[#8B1E2D] px-8 py-3 font-bold text-white transition hover:opacity-90"
+    >
+      加入官方 LINE
+    </a>
+
+    <div className="mt-6">
+      <button
+        type="button"
+        onClick={() => {
+          setSubmitted(false);
+          setShowForm(false);
+          setSelectedClass(null);
+          setName("");
+          setPhone("");
+          setEmail("");
+          setLineId("");
+          setChildName("");
+          setNote("");
+        }}
+        className="text-sm font-semibold text-slate-500 underline transition hover:text-[#8B1E2D]"
+      >
+        報名其他課程
+      </button>
+    </div>
   </div>
 )}
 
