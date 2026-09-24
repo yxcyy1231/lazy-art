@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import SignupForm from "@/components/SignupForm";
 import { supabase } from "@/lib/supabase";
 
 type Course = {
@@ -46,18 +45,6 @@ export default function CoursePage() {
   const [courses, setCourses] = useState<Course[]>([]);
   const [regularClasses, setRegularClasses] = useState<RegularClass[]>([]);
   const [selectedDay, setSelectedDay] = useState<string>("");
-  const [selectedClass, setSelectedClass] = useState<RegularClass | null>(null);
-  const [selectedPlan, setSelectedPlan] = useState<
-  "single" | "12" | "14" | ""
->("");
-const [parentName, setParentName] = useState("");
-const [email, setEmail] = useState("");
-const [phone, setPhone] = useState("");
-const [lineId, setLineId] = useState("");
-const [childName, setChildName] = useState("");
-const [note, setNote] = useState("");
-const [extraPerson, setExtraPerson] = useState(false);
-const [polaroid, setPolaroid] = useState(false);
 
   useEffect(() => {
     loadCourses();
@@ -124,32 +111,28 @@ const [polaroid, setPolaroid] = useState(false);
 
       <main className="min-h-screen bg-[#FAF8F5]">
         {/* ========================================
-            頁面標題
+            頁面標題（白色底）
         ======================================== */}
         <div className="bg-white pt-20 md:pt-24">
           <section className="mx-auto max-w-7xl px-6 pb-10 pt-20">
-          <div className="text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#8B1E2D]">
-              LAZY ART
-            </p>
+            <div className="text-center">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#8B1E2D]">
+                LAZY ART
+              </p>
 
-            <h1 className="mt-4 text-5xl font-black text-slate-900">
-              課程介紹
-            </h1>
+              <h1 className="mt-4 text-5xl font-black text-slate-900">
+                課程介紹
+              </h1>
 
-            <p className="mt-6 text-lg text-slate-600">
-              從日常創作到主題課程，找到適合自己的藝術時光。
-            </p>
-          </div>
-        </section>
-        </div>
-                {/* 分隔線：課程介紹 / 常態課程 */}
-        <div className="mx-auto max-w-4xl px-6">
-          <div className="h-px bg-[#E8E0DA]" />
+              <p className="mt-6 text-lg text-slate-600">
+                從日常創作到主題課程，找到適合自己的藝術時光。
+              </p>
+            </div>
+          </section>
         </div>
 
         {/* ========================================
-            常態課程入口
+            常態課程入口（米色底）
         ======================================== */}
         <section className="mx-auto max-w-5xl px-6 py-16">
           <div className="text-center">
@@ -181,131 +164,6 @@ const [polaroid, setPolaroid] = useState(false);
         </section>
 
         <div className="mx-auto max-w-4xl px-6">
-          {selectedClass && (
-  <section
-    id="regular-signup"
-    className="mx-auto max-w-4xl scroll-mt-28 px-6 pb-24"
-  >
-    <div className="rounded-[32px] bg-white p-8 shadow-lg md:p-10">
-      <p className="text-sm font-semibold tracking-[0.25em] text-[#8B1E2D]">
-        REGISTRATION
-      </p>
-
-      <h2 className="mt-3 text-3xl font-black text-slate-900">
-        常態課程報名
-      </h2>
-
-      {/* 已選課程 */}
-      <div className="mt-8 rounded-[24px] bg-[#FAF8F5] p-6">
-        <p className="text-sm font-semibold text-[#8B1E2D]">
-          已選擇課程
-        </p>
-
-        <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h3 className="text-2xl font-black text-slate-900">
-              {selectedClass.title}
-            </h3>
-
-            <p className="mt-2 text-slate-500">
-              {selectedClass.day_of_week}・
-              {selectedClass.start_time}–{selectedClass.end_time}
-            </p>
-          </div>
-
-          <p className="font-bold text-slate-700">
-            NT${Number(selectedClass.price).toLocaleString("zh-TW")}／堂
-          </p>
-        </div>
-      </div>
-
-      {/* 方案 */}
-      <div className="mt-10">
-        <p className="text-lg font-bold text-slate-900">
-          選擇報名方案
-        </p>
-
-   <div className="mt-5 grid gap-4 md:grid-cols-3">
-  <button
-    type="button"
-    onClick={() => setSelectedPlan("single")}
-    className={`rounded-[22px] border p-5 text-left transition ${
-      selectedPlan === "single"
-        ? "border-[#8B1E2D] bg-[#FFF9F9]"
-        : "border-[#E4DDD8] hover:border-[#8B1E2D]"
-    }`}
-  >
-    <p className="font-bold text-slate-900">
-      單堂報名
-    </p>
-
-    <p className="mt-2 text-sm text-slate-500">
-      NT${Number(selectedClass.price).toLocaleString("zh-TW")}
-    </p>
-  </button>
-
-  <button
-    type="button"
-    onClick={() => setSelectedPlan("12")}
-    className={`rounded-[22px] border p-5 text-left transition ${
-      selectedPlan === "12"
-        ? "border-[#8B1E2D] bg-[#FFF9F9]"
-        : "border-[#E4DDD8] hover:border-[#8B1E2D]"
-    }`}
-  >
-    <p className="font-bold text-slate-900">
-      買 11 堂送 1 堂
-    </p>
-
-    <p className="mt-2 text-sm text-slate-500">
-      共 12 堂課
-    </p>
-  </button>
-
-  <button
-    type="button"
-    onClick={() => setSelectedPlan("14")}
-    className={`rounded-[22px] border p-5 text-left transition ${
-      selectedPlan === "14"
-        ? "border-[#8B1E2D] bg-[#FFF9F9]"
-        : "border-[#E4DDD8] hover:border-[#8B1E2D]"
-    }`}
-  >
-    <p className="font-bold text-slate-900">
-      買 12 堂送 2 堂
-    </p>
-
-    <p className="mt-2 text-sm text-slate-500">
-      共 14 堂＋畫袋
-    </p>
-  </button>
-</div>
-</div>
-{selectedPlan && (
-  <SignupForm
-      courseInfo={null}
-      courseTitle={selectedClass.title}
-      parentName={parentName}
-      setParentName={setParentName}
-      email={email}
-      setEmail={setEmail}
-      phone={phone}
-      setPhone={setPhone}
-      lineId={lineId}
-      setLineId={setLineId}
-      childName={childName}
-      setChildName={setChildName}
-      note={note}
-      setNote={setNote}
-      extraPerson={extraPerson}
-      setExtraPerson={setExtraPerson}
-      polaroid={polaroid}
-      setPolaroid={setPolaroid}
-    />
-)}
-    </div>
-  </section>
-)}
           <div className="h-px bg-[#E8E0DA]" />
         </div>
 
@@ -417,24 +275,12 @@ const [polaroid, setPolaroid] = useState(false);
                         </span>
                       )}
                     </div>
-<button
-  type="button"
-  onClick={() => {
-    setSelectedClass(item);
-
-    setTimeout(() => {
-      document
-        .getElementById("regular-signup")
-        ?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-    }, 100);
-  }}
-  className="mt-6 text-sm font-bold text-[#8B1E2D] transition hover:opacity-60"
+<Link
+  href={`/regular?day=${encodeURIComponent(item.day_of_week)}&course=${encodeURIComponent(item.category)}&time=${item.start_time.slice(0, 5)}`}
+  className="mt-6 inline-block text-sm font-bold text-[#8B1E2D] transition hover:opacity-60"
 >
-  選擇此課程 →
-</button>
+  前往報名 →
+</Link>
                   </div>
                 ))}
               </div>
