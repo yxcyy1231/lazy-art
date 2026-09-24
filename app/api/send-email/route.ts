@@ -6,7 +6,15 @@ export async function POST(req: Request) {
   try {
     console.log("📨 收到寄信 API");
 
-    const { email, parentName, courseName } = await req.json();
+    const {
+      email,
+      parentName,
+      courseName,
+      scheduleTitle,
+      scheduleTime,
+      price,
+      totalPrice,
+    } = await req.json();
 
     console.log("Email：", email);
     console.log("家長：", parentName);
@@ -18,12 +26,27 @@ export async function POST(req: Request) {
         { status: 400 }
       );
     }
-const { data, error } = await resend.emails.send({
-  from: "Lazy Art <onboarding@resend.dev>",
-  to: email,
-  subject: "🎨 Lazy Art｜報名成功通知",
 
-  html: `
+    const hasPlanInfo =
+      scheduleTitle || scheduleTime || price || totalPrice;
+
+    const planInfoHtml = hasPlanInfo
+      ? `
+  <div style="background:#FAF7F2;border-radius:12px;padding:20px;margin:20px 0;">
+    ${scheduleTitle ? `<p style="margin:0 0 10px;">報名方案：<strong>${scheduleTitle}</strong></p>` : ""}
+    ${scheduleTime ? `<p style="margin:0 0 10px;">上課時間：<strong>${scheduleTime}</strong></p>` : ""}
+    ${price ? `<p style="margin:0 0 10px;">單堂費用：<strong>NT$${price}</strong></p>` : ""}
+    ${totalPrice ? `<p style="margin:0;">應付總金額：<strong>NT$${totalPrice}</strong></p>` : ""}
+  </div>
+  `
+      : "";
+
+    const { data, error } = await resend.emails.send({
+      from: "Lazy Art <onboarding@resend.dev>",
+      to: email,
+      subject: "🎨 Lazy Art｜報名成功通知",
+
+      html: `
   <div style="font-family:Arial,sans-serif;max-width:600px;margin:auto;padding:32px;background:#fff;border-radius:12px;border:1px solid #eee;">
 
     <h2 style="color:#8B1E2D;">🎨 Lazy Art 懶得畫室</h2>
@@ -38,6 +61,8 @@ const { data, error } = await resend.emails.send({
     <p>
       我們已收到您的報名資料。
     </p>
+
+    ${planInfoHtml}
 
     <hr style="margin:24px 0;" />
 
@@ -68,7 +93,7 @@ const { data, error } = await resend.emails.send({
     </ul>
 
     <div style="margin:30px 0;text-align:center;">
-      <a
+      
         href="https://lin.ee/UPkos4l"
         style="
           display:inline-block;
@@ -107,7 +132,7 @@ const { data, error } = await resend.emails.send({
 
   </div>
   `,
-});
+    });
 
     console.log("Resend data：", data);
     console.log("Resend error：", error);
