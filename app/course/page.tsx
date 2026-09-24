@@ -308,9 +308,9 @@ export default function CoursePage() {
 
                     <span>
                       <strong className="text-white">
-                        買 12 堂送 2 堂
+                        買 16 堂送 2 堂
                       </strong>
-                      {" "}・共 14 堂＋畫袋
+                      {" "}・共 18 堂＋畫袋
                     </span>
                   </div>
                 </div>
