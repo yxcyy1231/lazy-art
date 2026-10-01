@@ -94,59 +94,10 @@ export default function CoursePage() {
         </div>
 
         {/* ========================================
-            常態課程入口（米色底）
-        ======================================== */}
-        <section className="mx-auto max-w-5xl px-6 py-16">
-          <div className="text-center">
-            <p className="text-sm font-semibold tracking-[0.3em] text-[#8B1E2D]">
-              REGULAR CLASSES
-            </p>
-
-            <h2 className="mt-3 text-4xl font-black text-slate-900">
-              常態課程
-            </h2>
-
-            <p className="mt-5 leading-8 text-slate-600">
-              每週固定開課，依照不同年齡與興趣，
-              選擇適合自己的藝術課程。
-            </p>
-
-            <p className="mt-3 text-sm text-slate-500">
-              兒童美術・漫畫・素描・黏土・水彩・升學
-            </p>
-
-            <Link
-              href="/regular"
-              className="mt-8 inline-flex rounded-full bg-[#8B1E2D] px-8 py-4 font-semibold text-white transition hover:bg-[#6f1724]"
-            >
-              前往常態課程報名 →
-            </Link>
-          </div>
-        </section>
-
-        <div className="mx-auto max-w-4xl px-6">
-          <div className="h-px bg-[#E8E0DA]" />
-        </div>
-
-        {/* ========================================
             常態課程分類
         ======================================== */}
-        <section className="mx-auto max-w-6xl px-6 py-20">
-          <div className="text-center">
-            <p className="text-sm font-semibold tracking-[0.3em] text-[#8B1E2D]">
-              COURSE CATEGORIES
-            </p>
-
-            <h2 className="mt-3 text-4xl font-black text-slate-900">
-              常態課程介紹
-            </h2>
-
-            <p className="mt-4 text-slate-600">
-              點選課程類別，查看課程資訊、費用與注意事項。
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <section className="mx-auto max-w-6xl px-6 pb-16 pt-20">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {regularCategories.map((category) =>
               category.ready ? (
                 <Link
@@ -177,6 +128,41 @@ export default function CoursePage() {
                 </div>
               )
             )}
+          </div>
+        </section>
+
+        <div className="mx-auto max-w-4xl px-6">
+          <div className="h-px bg-[#E8E0DA]" />
+        </div>
+
+        {/* ========================================
+            常態課程入口（米色底）
+        ======================================== */}
+        <section className="mx-auto max-w-5xl px-6 py-16">
+          <div className="text-center">
+            <p className="text-sm font-semibold tracking-[0.3em] text-[#8B1E2D]">
+              REGULAR CLASSES
+            </p>
+
+            <h2 className="mt-3 text-4xl font-black text-slate-900">
+              常態課程
+            </h2>
+
+            <p className="mt-5 leading-8 text-slate-600">
+              每週固定開課，依照不同年齡與興趣，
+              選擇適合自己的藝術課程。
+            </p>
+
+            <p className="mt-3 text-sm text-slate-500">
+              兒童美術・漫畫・素描・黏土・水彩・升學
+            </p>
+
+            <Link
+              href="/regular"
+              className="mt-8 inline-flex rounded-full bg-[#8B1E2D] px-8 py-4 font-semibold text-white transition hover:bg-[#6f1724]"
+            >
+              前往常態課程報名 →
+            </Link>
           </div>
         </section>
 
