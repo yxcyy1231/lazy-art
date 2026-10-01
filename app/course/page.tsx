@@ -256,7 +256,7 @@ export default function CoursePage() {
                   >
                     <div className="flex items-start justify-between gap-5">
                       <div>
-                        <p className="text-sm font-semibold text-[#8B1E2D]">
+                        <p className="text-sm font-semibold uppercase text-[#8B1E2D]">
                           {categoryEnglish[item.category] ?? item.category}
                         </p>
 
