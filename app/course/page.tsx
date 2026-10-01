@@ -121,30 +121,9 @@ export default function CoursePage() {
 
       <main className="min-h-screen bg-[#FAF8F5]">
         {/* ========================================
-            頁面標題（白色底）
-        ======================================== */}
-        <div className="bg-white pt-20 md:pt-24">
-          <section className="mx-auto max-w-7xl px-6 pb-10 pt-20">
-            <div className="text-center">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#8B1E2D]">
-                LAZY ART
-              </p>
-
-              <h1 className="mt-4 text-5xl font-black text-slate-900">
-                課程介紹
-              </h1>
-
-              <p className="mt-6 text-lg text-slate-600">
-                從日常創作到主題課程，找到適合自己的藝術時光。
-              </p>
-            </div>
-          </section>
-        </div>
-
-        {/* ========================================
             常態課程入口（米色底）
         ======================================== */}
-        <section className="mx-auto max-w-5xl px-6 py-16">
+        <section className="mx-auto max-w-5xl px-6 pb-16 pt-28 md:pt-32">
           <div className="text-center">
             <p className="text-sm font-semibold tracking-[0.3em] text-[#8B1E2D]">
               REGULAR CLASSES
@@ -256,7 +235,7 @@ export default function CoursePage() {
                   >
                     <div className="flex items-start justify-between gap-5">
                       <div>
-                        <p className="text-sm font-semibold uppercase text-[#8B1E2D]">
+                        <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#8B1E2D]">
                           {categoryEnglish[item.category] ?? item.category}
                         </p>
 
