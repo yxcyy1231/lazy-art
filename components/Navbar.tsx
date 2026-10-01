@@ -50,7 +50,7 @@ export default function Navbar() {
             教室環境
           </Link>
 
-          <Link href="/course" className="transition hover:text-[#8B1E2D]">
+          <Link href="/regular" className="transition hover:text-[#8B1E2D]">
             立即報名
           </Link>
 
@@ -108,7 +108,7 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="/course"
+              href="/regular"
               className="px-6 py-4 hover:bg-gray-50"
               onClick={() => setMenuOpen(false)}
             >
