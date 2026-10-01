@@ -21,7 +21,7 @@ export default function ClayclassPage() {
           {/* 標題 */}
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#8B1E2D]">
-              REGULAR CLASS
+              Clay
             </p>
 
             <h1 className="mt-4 text-5xl font-black text-slate-900">
