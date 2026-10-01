@@ -96,7 +96,7 @@ export default function CoursePage() {
         {/* ========================================
             常態課程入口（米色底）
         ======================================== */}
-        <section className="mx-auto max-w-5xl px-6 pb-10 pt-10">
+        <section className="mx-auto max-w-5xl px-6 pb-6 pt-6">
           <div className="text-center">
             <p className="text-sm font-semibold tracking-[0.3em] text-[#8B1E2D]">
               REGULAR CLASSES
