@@ -146,15 +146,15 @@ async function handleRegularSubmit() {
     const planText =
       selectedPlan === "12"
         ? "買 11 堂送 1 堂"
-        : selectedPlan === "18"
-        ? "買 16 堂送 2 堂"
+        : selectedPlan === "14"
+        ? "買 12 堂送 2 堂"
         : "單堂報名";
 
     const totalPrice =
       selectedPlan === "12"
         ? selectedClass.price * 11
-        : selectedPlan === "18"
-        ? selectedClass.price * 16
+        : selectedPlan === "14"
+        ? selectedClass.price * 12
         : selectedClass.price;
 
     const scheduleText =
@@ -235,6 +235,16 @@ async function handleRegularSubmit() {
     (item) => item.day_of_week === selectedDay
   );
 
+  const categoryEnglish: Record<string, string> = {
+    "兒童美術": "Children's Art",
+    "漫畫": "Comics",
+    "黏土": "Clay",
+    "素描": "Sketch",
+    "升學": "Exam Prep",
+    "水彩建築": "Watercolor (Architecture)",
+    "風景水彩": "Watercolor (Landscape)",
+  };
+
   return (
     <>
       <Navbar />
@@ -249,7 +259,7 @@ async function handleRegularSubmit() {
             </p>
 
             <h1 className="mt-4 text-5xl font-black text-slate-900">
-              常態課程
+              立即報名
             </h1>
 
             <p className="mt-5 text-slate-500">
@@ -303,7 +313,7 @@ async function handleRegularSubmit() {
                   className="rounded-[26px] border border-[#EEE7E2] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
                 >
                   <p className="text-sm font-bold text-[#8B1E2D]">
-                    {item.category}
+                    {categoryEnglish[item.category] ?? item.category}
                   </p>
 
                   <h3 className="mt-1 text-2xl font-black text-slate-900">
@@ -363,7 +373,7 @@ async function handleRegularSubmit() {
                 </p>
 
                 <p>
-                  <strong>買 16 堂送 2 堂</strong> ・共 18 堂＋畫袋
+                  <strong>買 12 堂送 2 堂</strong> ・共 14 堂＋畫袋
                 </p>
               </div>
             </div>
@@ -476,7 +486,7 @@ async function handleRegularSubmit() {
                   <button
                     type="button"
                   onClick={() => {
-  setSelectedPlan("18");
+  setSelectedPlan("14");
   setShowForm(true);
 
   setTimeout(() => {
@@ -487,17 +497,17 @@ async function handleRegularSubmit() {
   }, 100);
 }}
                     className={`rounded-[20px] border p-5 text-left transition ${
-                      selectedPlan === "18"
+                      selectedPlan === "14"
                         ? "border-[#8B1E2D] bg-[#FFF9F9]"
                         : "border-[#E4DDD8]"
                     }`}
                   >
                     <p className="font-bold text-slate-900">
-                      買 16 堂送 2 堂
+                      買 12 堂送 2 堂
                     </p>
 
                     <p className="mt-2 text-sm text-slate-500">
-                      共 18 堂＋畫袋
+                      共 14 堂＋畫袋
                     </p>
                   </button>
                 </div>
@@ -540,7 +550,7 @@ async function handleRegularSubmit() {
         ? "單堂報名"
         : selectedPlan === "12"
         ? "買 11 堂送 1 堂"
-        : "買 16 堂送 2 堂"}
+        : "買 12 堂送 2 堂"}
     </p>
 
     <p className="font-bold text-slate-900">
@@ -548,8 +558,8 @@ async function handleRegularSubmit() {
       {Number(
         selectedPlan === "12"
           ? selectedClass.price * 11
-          : selectedPlan === "18"
-          ? selectedClass.price * 16
+          : selectedPlan === "14"
+          ? selectedClass.price * 12
           : selectedClass.price
       ).toLocaleString("zh-TW")}
     </p>
@@ -567,8 +577,8 @@ async function handleRegularSubmit() {
       {Number(
         selectedPlan === "12"
           ? selectedClass.price * 11
-          : selectedPlan === "18"
-          ? selectedClass.price * 16
+          : selectedPlan === "14"
+          ? selectedClass.price * 12
           : selectedClass.price
       ).toLocaleString("zh-TW")}
     </p>
@@ -648,8 +658,8 @@ async function handleRegularSubmit() {
         <span className="font-semibold text-slate-800">
           {selectedPlan === "12"
             ? "買 11 堂送 1 堂"
-            : selectedPlan === "18"
-            ? "買 16 堂送 2 堂"
+            : selectedPlan === "14"
+            ? "買 12 堂送 2 堂"
             : "單堂報名"}
         </span>
       </div>
@@ -662,8 +672,8 @@ async function handleRegularSubmit() {
           {Number(
             selectedPlan === "12"
               ? selectedClass.price * 11
-              : selectedPlan === "18"
-              ? selectedClass.price * 16
+              : selectedPlan === "14"
+              ? selectedClass.price * 12
               : selectedClass.price
           ).toLocaleString("zh-TW")}
         </span>
