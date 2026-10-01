@@ -312,7 +312,7 @@ async function handleRegularSubmit() {
                   key={item.id}
                   className="rounded-[26px] border border-[#EEE7E2] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
                 >
-                  <p className="text-sm font-bold text-[#8B1E2D]">
+                  <p className="text-sm font-bold uppercase text-[#8B1E2D]">
                     {categoryEnglish[item.category] ?? item.category}
                   </p>
 
