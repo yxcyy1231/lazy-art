@@ -105,6 +105,16 @@ export default function CoursePage() {
       ?.scrollIntoView({ behavior: "smooth" });
   }
 
+  const categoryEnglish: Record<string, string> = {
+    "兒童美術": "Children's Art",
+    "漫畫": "Comics",
+    "黏土": "Clay",
+    "素描": "Sketch",
+    "升學": "Exam Prep",
+    "水彩建築": "Watercolor (Architecture)",
+    "風景水彩": "Watercolor (Landscape)",
+  };
+
   return (
     <>
       <Navbar />
@@ -141,7 +151,7 @@ export default function CoursePage() {
             </p>
 
             <h2 className="mt-3 text-4xl font-black text-slate-900">
-              常態課程
+              立即報名
             </h2>
 
             <p className="mt-5 leading-8 text-slate-600">
@@ -247,7 +257,7 @@ export default function CoursePage() {
                     <div className="flex items-start justify-between gap-5">
                       <div>
                         <p className="text-sm font-semibold text-[#8B1E2D]">
-                          {item.category}
+                          {categoryEnglish[item.category] ?? item.category}
                         </p>
 
                         <h4 className="mt-1 text-2xl font-black text-slate-900">
