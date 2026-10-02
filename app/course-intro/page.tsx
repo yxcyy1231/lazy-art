@@ -125,7 +125,7 @@ export default function CoursePage() {
         {/* ========================================
             常態課程分類
         ======================================== */}
-        <div className="mx-auto max-w-6xl px-6 pb-16 pt-0">
+        <div className="mx-auto max-w-6xl px-6 pb-16 pt-6">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {regularCategories.map((category) =>
               category.ready ? (
