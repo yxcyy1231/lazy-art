@@ -76,7 +76,7 @@ export default function CoursePage() {
             頁面標題（白色底）
         ======================================== */}
         <div className="bg-white pt-20 md:pt-24">
-          <section className="mx-auto max-w-7xl px-6 pb-6 pt-8">
+          <section className="mx-auto max-w-7xl px-6 pb-6 pt-20">
             <div className="text-center">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#8B1E2D]">
                 LAZY ART
@@ -96,7 +96,7 @@ export default function CoursePage() {
         {/* ========================================
             常態課程入口（米色底）
         ======================================== */}
-        <section className="mx-auto max-w-5xl px-6 pb-6 pt-6">
+        <section className="mx-auto max-w-5xl px-6 pb-10 pt-10">
           <div className="text-center">
             <p className="text-sm font-semibold tracking-[0.3em] text-[#8B1E2D]">
               REGULAR CLASSES
@@ -120,7 +120,7 @@ export default function CoursePage() {
         {/* ========================================
             常態課程分類
         ======================================== */}
-        <section className="mx-auto max-w-6xl px-6 pb-16">
+        <section className="mx-auto max-w-6xl px-6 pb-16 pt-0">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {regularCategories.map((category) =>
               category.ready ? (
