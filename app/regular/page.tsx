@@ -487,7 +487,7 @@ async function handleRegularSubmit() {
                   <button
                     type="button"
                   onClick={() => {
-  setSelectedPlan("14");
+  setSelectedPlan("18");
   setShowForm(true);
 
   setTimeout(() => {
