@@ -21,7 +21,7 @@ export default function AcrylicPage() {
           {/* 標題 */}
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#8B1E2D]">
-              REGULAR CLASS
+              ACRYLIC
             </p>
 
             <h1 className="mt-4 text-5xl font-black text-slate-900">
