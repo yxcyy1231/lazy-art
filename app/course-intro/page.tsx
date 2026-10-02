@@ -96,7 +96,7 @@ export default function CoursePage() {
         {/* ========================================
             常態課程入口（米色底）
         ======================================== */}
-        <section className="mx-auto max-w-5xl px-6 pb-10 pt-10">
+        <div className="mx-auto max-w-5xl px-6 pb-4 pt-10">
           <div className="text-center">
             <p className="text-sm font-semibold tracking-[0.3em] text-[#8B1E2D]">
               REGULAR CLASSES
@@ -115,12 +115,12 @@ export default function CoursePage() {
               兒童美術・漫畫・素描・黏土・水彩・升學
             </p>
           </div>
-        </section>
+        </div>
 
         {/* ========================================
             常態課程分類
         ======================================== */}
-        <section className="mx-auto max-w-6xl px-6 pb-16 pt-0">
+        <div className="mx-auto max-w-6xl px-6 pb-16 pt-0">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {regularCategories.map((category) =>
               category.ready ? (
@@ -162,7 +162,7 @@ export default function CoursePage() {
               前往常態課程報名 →
             </Link>
           </div>
-        </section>
+        </div>
 
         <div className="mx-auto max-w-4xl px-6">
           <div className="h-px bg-[#E8E0DA]" />
