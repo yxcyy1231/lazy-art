@@ -146,7 +146,7 @@ async function handleRegularSubmit() {
     const planText =
       selectedPlan === "12"
         ? "買 11 堂送 1 堂"
-        : selectedPlan === "14"
+        : selectedPlan === "18"
         ? "買 16 堂送 2 堂"
         : "單堂報名";
 
@@ -374,7 +374,7 @@ async function handleRegularSubmit() {
                 </p>
 
                 <p>
-                  <strong>買 12 堂送 2 堂</strong> ・共 14 堂＋畫袋
+                  <strong>買 16 堂送 2 堂</strong> ・共 18 堂＋畫袋
                 </p>
               </div>
             </div>
