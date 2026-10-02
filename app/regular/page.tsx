@@ -243,6 +243,7 @@ async function handleRegularSubmit() {
     "升學": "Exam Prep",
     "水彩建築": "Watercolor (Architecture)",
     "風景水彩": "Watercolor (Landscape)",
+    "壓克力繪畫": "Acrylic Painting",
   };
 
   return (
