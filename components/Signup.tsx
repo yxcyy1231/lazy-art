@@ -276,6 +276,14 @@ try {
       email,
       parentName,
       courseName: courseTitle,
+      phone,
+      lineId,
+      childName,
+      note,
+      scheduleTitle,
+      scheduleTime,
+      price,
+      totalPrice,
     }),
   });
 
