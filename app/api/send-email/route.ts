@@ -2,6 +2,8 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+const STUDIO_NOTIFY_EMAIL = "lazyartus@gmail.com";
+
 export async function POST(req: Request) {
   try {
     console.log("📨 收到寄信 API");
@@ -10,6 +12,10 @@ export async function POST(req: Request) {
       email,
       parentName,
       courseName,
+      phone,
+      lineId,
+      childName,
+      note,
       scheduleTitle,
       scheduleTime,
       price,
@@ -40,6 +46,10 @@ export async function POST(req: Request) {
   </div>
   `
       : "";
+
+    /* =========================
+        寄給家長：報名成功通知
+    ========================= */
 
     const { data, error } = await resend.emails.send({
       from: "Lazy Art <onboarding@resend.dev>",
@@ -93,7 +103,7 @@ export async function POST(req: Request) {
     </ul>
 
     <div style="margin:30px 0;text-align:center;">
-      
+      <a
         href="https://lin.ee/UPkos4l"
         style="
           display:inline-block;
@@ -139,6 +149,50 @@ export async function POST(req: Request) {
 
     if (error) {
       return Response.json(error, { status: 400 });
+    }
+
+    /* =========================
+        寄給畫室：內部通知
+        （家長的信如果失敗會直接中斷，
+        這封失敗則不影響家長那邊，只記錄在 log）
+    ========================= */
+
+    try {
+      await resend.emails.send({
+        from: "Lazy Art 報名通知 <onboarding@resend.dev>",
+        to: STUDIO_NOTIFY_EMAIL,
+        subject: `🔔 新報名｜${courseName ?? ""}｜${parentName ?? ""}`,
+
+        html: `
+  <div style="font-family:Arial,sans-serif;max-width:600px;margin:auto;padding:24px;">
+
+    <h2 style="color:#8B1E2D;">🔔 新的報名通知</h2>
+
+    <table style="width:100%;border-collapse:collapse;font-size:15px;">
+      <tbody>
+        <tr><td style="padding:6px 0;color:#888;width:110px;">課程</td><td style="padding:6px 0;"><strong>${courseName ?? "-"}</strong></td></tr>
+        ${scheduleTitle ? `<tr><td style="padding:6px 0;color:#888;">方案</td><td style="padding:6px 0;">${scheduleTitle}</td></tr>` : ""}
+        ${scheduleTime ? `<tr><td style="padding:6px 0;color:#888;">時間</td><td style="padding:6px 0;">${scheduleTime}</td></tr>` : ""}
+        <tr><td style="padding:6px 0;color:#888;">家長姓名</td><td style="padding:6px 0;">${parentName ?? "-"}</td></tr>
+        <tr><td style="padding:6px 0;color:#888;">小朋友姓名</td><td style="padding:6px 0;">${childName ?? "-"}</td></tr>
+        <tr><td style="padding:6px 0;color:#888;">Email</td><td style="padding:6px 0;">${email ?? "-"}</td></tr>
+        <tr><td style="padding:6px 0;color:#888;">電話</td><td style="padding:6px 0;">${phone ?? "-"}</td></tr>
+        <tr><td style="padding:6px 0;color:#888;">LINE ID</td><td style="padding:6px 0;">${lineId ?? "-"}</td></tr>
+        ${note ? `<tr><td style="padding:6px 0;color:#888;vertical-align:top;">備註</td><td style="padding:6px 0;">${note}</td></tr>` : ""}
+        ${price ? `<tr><td style="padding:6px 0;color:#888;">單堂費用</td><td style="padding:6px 0;">NT$${price}</td></tr>` : ""}
+        ${totalPrice ? `<tr><td style="padding:6px 0;color:#888;">應付總金額</td><td style="padding:6px 0;"><strong>NT$${totalPrice}</strong></td></tr>` : ""}
+      </tbody>
+    </table>
+
+    <p style="margin-top:24px;color:#aaa;font-size:13px;">
+      這封信會在家長完成報名後自動寄出，報名資料也同步存在 Supabase 的 registrations 表。
+    </p>
+
+  </div>
+  `,
+      });
+    } catch (notifyErr) {
+      console.error("寄送內部通知信失敗（不影響家長收到的信）：", notifyErr);
     }
 
     return Response.json({
