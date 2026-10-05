@@ -12,7 +12,7 @@ export default function StudentWorks() {
           學生作品
         </h2>
 
-        <p className="text-center text-slate-600 mt-6 text-xl">
+        <p className="text-center text-slate-500 mt-6 text-xl">
           探索創作的無限可能。
         </p>
 
