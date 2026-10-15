@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { createClient } from "@supabase/supabase-js";
 import ClayCarousel from "./ClayCarousel";
 import WatercolorCarousel from "./WatercolorCarousel";
@@ -78,18 +77,21 @@ export default async function HomeCourseSection() {
           </div>
         </div>
 
+        {/* 分隔線 */}
+        <div className="mx-auto my-24 max-w-3xl border-t border-[#E7E0D8]" />
+
         {/* =========================
-            黏土常態班
+            9 月常態課主題
         ========================= */}
-        <div className="mx-auto mt-20 max-w-4xl">
+        <div className="mx-auto max-w-4xl">
           <div className="rounded-[32px] border border-[#E7E0D8] bg-white px-6 py-12 text-center shadow-sm md:px-12 md:py-16">
 
             <p className="font-semibold uppercase tracking-[0.3em] text-[#8B1E2D]">
-              CLAY CLASS
+              SEPTEMBER THEME
             </p>
 
             <p className="mt-5 text-sm font-bold tracking-[0.2em] text-slate-400">
-              黏土常態班
+              週六黏土常態班
             </p>
 
             <h2 className="mt-3 text-4xl font-black text-slate-900 md:text-5xl">
@@ -104,17 +106,17 @@ export default async function HomeCourseSection() {
               從造型、配色到裝飾，完成自己的迷你甜點世界。
             </p>
 
-            {/* 上課日/時數 */}
+            {/* 日期時間 */}
             <div className="mx-auto mt-9 max-w-xl rounded-[24px] bg-[#FAF8F5] px-6 py-6">
               <div className="flex flex-col items-center justify-center gap-3 md:flex-row md:gap-8">
 
                 <div>
                   <p className="text-xs font-semibold tracking-[0.2em] text-slate-400">
-                    DATE
+                    START DATE
                   </p>
 
                   <p className="mt-1 text-lg font-black text-slate-900">
-                    週四 | 週六 | 週日
+                    9/12（六）開始
                   </p>
                 </div>
 
@@ -122,11 +124,11 @@ export default async function HomeCourseSection() {
 
                 <div>
                   <p className="text-xs font-semibold tracking-[0.2em] text-slate-400">
-                    CLASS HOUR
+                    CLASS TIME
                   </p>
 
                   <p className="mt-1 text-lg font-black text-slate-900">
-                    1.5 hrs
+                    13:30–15:00
                   </p>
                 </div>
 
@@ -134,15 +136,15 @@ export default async function HomeCourseSection() {
             </div>
 
             <p className="mt-7 text-sm leading-7 text-slate-500">
-              黏土常態班・可單堂報名・亦可使用常態課方案
+              週六黏土常態班・可單堂報名・亦可使用常態課方案
             </p>
 
             <div className="mt-9">
               <Link
-                href="/course/clay-class"
+                href="/regular?day=週六&course=黏土&time=13:30#classes"
                 className="inline-flex items-center rounded-full bg-[#8B1E2D] px-10 py-4 text-lg font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#741826] hover:shadow-lg"
               >
-                查看課程 →
+                查看課程・立即報名 →
               </Link>
             </div>
 
@@ -167,11 +169,11 @@ export default async function HomeCourseSection() {
               </h2>
             </div>
 
-            <div className="mt-16 grid gap-12 md:grid-cols-2 md:gap-x-10 md:gap-y-16">
+            <div className="mt-16 space-y-20">
               {courses.map((course) => (
                 <div
                   key={course.id}
-                  className="border-b border-[#E7E0D8] pb-16 md:border-0 md:pb-0"
+                  className="mx-auto max-w-3xl border-b border-[#E7E0D8] pb-20 last:border-0"
                 >
                   <div className="text-center">
 
@@ -200,11 +202,13 @@ export default async function HomeCourseSection() {
                       />
                     )}
 
-                    <p className="mx-auto mt-8 max-w-2xl text-lg leading-9 text-slate-600">
-                      {course.description}
-                    </p>
+                    {course.slug !== "clay" && (
+                      <p className="mx-auto mt-8 max-w-2xl text-lg leading-9 text-slate-600">
+                        {course.description}
+                      </p>
+                    )}
 
-                    {course.price && (
+                    {course.slug !== "clay" && course.price && (
                       <div className="mt-10">
                         <p className="text-sm uppercase tracking-[0.25em] text-slate-400">
                           PRICE
@@ -231,67 +235,6 @@ export default async function HomeCourseSection() {
             </div>
           </>
         )}
-
-        {/* 分隔線 */}
-        <div className="mx-auto my-24 max-w-3xl border-t border-[#E7E0D8]" />
-
-        {/* =========================
-            學生作品預覽
-        ========================= */}
-        <div className="text-center">
-          <p className="font-semibold uppercase tracking-[0.3em] text-[#8B1E2D]">
-            STUDENT WORKS
-          </p>
-
-          <h2 className="mt-4 text-4xl font-black text-slate-900 md:text-5xl">
-            學生作品
-          </h2>
-
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-9 text-slate-600">
-            探索創作的無限可能。
-          </p>
-        </div>
-
-        <div className="mt-12 grid gap-6 sm:grid-cols-3">
-          <div className="overflow-hidden rounded-3xl">
-            <Image
-              src="/images/student-works/1.jpg"
-              alt="學生作品"
-              width={700}
-              height={500}
-              className="h-64 w-full object-cover transition duration-500 hover:scale-105"
-            />
-          </div>
-
-          <div className="overflow-hidden rounded-3xl">
-            <Image
-              src="/images/student-works/2.jpg"
-              alt="學生作品"
-              width={700}
-              height={500}
-              className="h-64 w-full object-cover transition duration-500 hover:scale-105"
-            />
-          </div>
-
-          <div className="overflow-hidden rounded-3xl">
-            <Image
-              src="/images/student-works/3.jpg"
-              alt="學生作品"
-              width={700}
-              height={500}
-              className="h-64 w-full object-cover transition duration-500 hover:scale-105"
-            />
-          </div>
-        </div>
-
-        <div className="mt-10 text-center">
-          <Link
-            href="/student-works"
-            className="inline-flex items-center rounded-full bg-[#8B1E2D] px-10 py-4 text-lg font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#741826] hover:shadow-lg"
-          >
-            看更多學生作品 →
-          </Link>
-        </div>
 
       </div>
     </section>
