@@ -29,7 +29,7 @@ const slides = [
     href: "/course/clay",
   },
   {
-    image: "/images/classroom/classroom1.jpg",
+    image: "/images/banner 01.jpg",
     label: "LAZY ART",
     title: "像咖啡廳一樣舒服的畫室",
     text: "讓孩子在沒有壓力的環境裡自在創作。",
