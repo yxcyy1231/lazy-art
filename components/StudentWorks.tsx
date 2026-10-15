@@ -102,6 +102,9 @@ export default function StudentWorks() {
           />
         </div>
 
+        {/* 分隔線 */}
+        <div className="mx-auto my-16 md:my-20 max-w-3xl border-t border-[#E7E0D8]" />
+        
         {/* 素描作品 */}
         <div className="mt-20 md:mt-24">
           <h2 className="text-4xl md:text-5xl font-black text-center">
