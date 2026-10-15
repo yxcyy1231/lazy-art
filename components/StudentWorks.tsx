@@ -165,7 +165,7 @@ export default function StudentWorks() {
             />
 
             <Image
-              src="/images/courses/comic 02.jpg"
+              src="/images/courses/comic 04.jpg"
               alt="漫畫作品二"
               width={700}
               height={500}
