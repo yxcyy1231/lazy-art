@@ -30,9 +30,9 @@ export default function CourseCarousel({ images, alt }: Props) {
   };
 
   return (
-    <div className="mx-auto mt-7 w-[82%] max-w-[340px] sm:w-[88%] sm:max-w-[400px] md:w-full md:max-w-[440px]">
+    <div className="mx-auto mt-7 w-[82%] max-w-[360px] sm:w-[88%] sm:max-w-[420px] md:w-full md:max-w-[440px]">
 
-      <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[22px] bg-[#FAF8F5]">
+      <div className="relative h-[320px] w-full overflow-hidden rounded-[22px] bg-[#FAF8F5] sm:h-[360px] md:h-[400px]">
 
         <div
           className="flex h-full w-full transition-transform duration-700 ease-in-out"
@@ -48,7 +48,7 @@ export default function CourseCarousel({ images, alt }: Props) {
               <img
                 src={src}
                 alt={`${alt} ${index + 1}`}
-                className="h-full w-full object-contain"
+                className="h-full w-full object-cover"
               />
             </div>
           ))}
