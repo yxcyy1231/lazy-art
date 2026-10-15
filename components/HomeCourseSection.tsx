@@ -169,11 +169,11 @@ export default async function HomeCourseSection() {
               </h2>
             </div>
 
-            <div className="mt-16 space-y-20">
+            <div className="mt-16 grid gap-12 md:grid-cols-2 md:gap-x-10 md:gap-y-16">
               {courses.map((course) => (
                 <div
                   key={course.id}
-                  className="mx-auto max-w-3xl border-b border-[#E7E0D8] pb-20 last:border-0"
+                  className="border-b border-[#E7E0D8] pb-16 md:border-0 md:pb-0"
                 >
                   <div className="text-center">
 
