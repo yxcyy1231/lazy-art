@@ -1,143 +1,142 @@
+
 import Image from "next/image";
 
 export default function StudentWorks() {
   return (
     <section
       id="student-works"
-      className="py-28 bg-[#faf7f2]"
+      className="py-20 bg-[#faf7f2]"
     >
       <div className="max-w-7xl mx-auto px-6">
 
-        <h2 className="text-5xl font-black text-center">
+        {/* 學生作品 */}
+        <h2 className="text-4xl md:text-5xl font-black text-center">
           學生作品
         </h2>
 
-        <p className="text-center text-slate-500 mt-6 text-xl">
+        <p className="text-center text-slate-500 mt-5 text-lg md:text-xl">
           探索創作的無限可能。
         </p>
 
-        <div className="grid md:grid-cols-3 gap-8 mt-16">
-
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mt-10">
           <Image
             src="/images/student-works/1.jpg"
-            alt=""
+            alt="學生作品一"
             width={700}
             height={500}
-            className="rounded-3xl object-cover h-80"
+            className="w-full h-64 md:h-80 rounded-3xl object-cover"
           />
 
           <Image
             src="/images/student-works/2.jpg"
-            alt=""
+            alt="學生作品二"
             width={700}
             height={500}
-            className="rounded-3xl object-cover h-80"
+            className="w-full h-64 md:h-80 rounded-3xl object-cover"
           />
 
           <Image
             src="/images/student-works/3.jpg"
-            alt=""
+            alt="學生作品三"
             width={700}
             height={500}
-            className="rounded-3xl object-cover h-80"
+            className="w-full h-64 md:h-80 rounded-3xl object-cover"
           />
 
           <Image
             src="/images/student-works/4.jpg"
-            alt=""
+            alt="學生作品四"
             width={700}
             height={500}
-            className="rounded-3xl object-cover h-80"
+            className="w-full h-64 md:h-80 rounded-3xl object-cover"
           />
 
           <Image
             src="/images/student-works/5.jpg"
-            alt=""
+            alt="學生作品五"
             width={700}
             height={500}
-            className="rounded-3xl object-cover h-80"
+            className="w-full h-64 md:h-80 rounded-3xl object-cover"
           />
 
           <Image
             src="/images/student-works/6.jpg"
-            alt=""
+            alt="學生作品六"
             width={700}
             height={500}
-            className="rounded-3xl object-cover h-80"
+            className="w-full h-64 md:h-80 rounded-3xl object-cover"
           />
-
         </div>
 
-        <div className="mx-auto my-20 max-w-3xl border-t border-[#E7E0D8]" />
+        {/* 分隔線 */}
+        <div className="mx-auto my-16 md:my-20 max-w-3xl border-t border-[#E7E0D8]" />
 
-        <p className="text-center text-slate-500 text-lg">
+        {/* 夏令營作品 */}
+        <p className="text-center text-slate-500 text-lg md:text-xl">
           暑期夏令營｜走出教室，開啟五感創作。
         </p>
 
-        <div className="grid md:grid-cols-3 gap-8 mt-16">
-
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mt-10">
           <Image
             src="/images/student-works/7.jpg"
-            alt=""
+            alt="暑期夏令營作品一"
             width={700}
             height={500}
-            className="rounded-3xl object-cover h-80"
+            className="w-full h-64 md:h-80 rounded-3xl object-cover"
           />
 
           <Image
             src="/images/student-works/8.jpg"
-            alt=""
+            alt="暑期夏令營作品二"
             width={700}
             height={500}
-            className="rounded-3xl object-cover h-80"
+            className="w-full h-64 md:h-80 rounded-3xl object-cover"
           />
 
           <Image
             src="/images/student-works/9.jpg"
-            alt=""
+            alt="暑期夏令營作品三"
             width={700}
             height={500}
-            className="rounded-3xl object-cover h-80"
+            className="w-full h-64 md:h-80 rounded-3xl object-cover"
           />
-
         </div>
 
-        <div className="max-w-7xl mx-auto px-6">
+        {/* 素描作品 */}
+        <div className="mt-20 md:mt-24">
+          <h2 className="text-4xl md:text-5xl font-black text-center">
+            素描作品
+          </h2>
 
-        <h2 className="text-5xl font-black text-center">
-          素描作品
-        </h2>
+          <p className="text-center text-slate-500 mt-5 text-lg md:text-xl">
+            觀察光影與線條，描繪眼中的世界。
+          </p>
 
-        <p className="text-center text-slate-500 mt-6 text-xl">
-          探索創作的無限可能。
-        </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mt-10">
+            <Image
+              src="/images/courses/sketch 01.jpg"
+              alt="素描作品一"
+              width={700}
+              height={500}
+              className="w-full h-64 md:h-80 rounded-3xl object-cover"
+            />
 
-        <div className="grid md:grid-cols-3 gap-8 mt-16">
+            <Image
+              src="/images/courses/sketch 02.jpg"
+              alt="素描作品二"
+              width={700}
+              height={500}
+              className="w-full h-64 md:h-80 rounded-3xl object-cover"
+            />
 
-          <Image
-            src="/images/courses/sketch 01.jpg"
-            alt=""
-            width={700}
-            height={500}
-            className="rounded-3xl object-cover h-80"
-          />
-
-          <Image
-            src="/images/courses/sketch 02.jpg"
-            alt=""
-            width={700}
-            height={500}
-            className="rounded-3xl object-cover h-80"
-          />
-
-          <Image
-            src="/images/courses/sketch 03.jpg"
-            alt=""
-            width={700}
-            height={500}
-            className="rounded-3xl object-cover h-80"
-          />
-
+            <Image
+              src="/images/courses/sketch 03.jpg"
+              alt="素描作品三"
+              width={700}
+              height={500}
+              className="w-full h-64 md:h-80 rounded-3xl object-cover"
+            />
+          </div>
         </div>
 
       </div>
