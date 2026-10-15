@@ -104,9 +104,9 @@ export default function StudentWorks() {
 
         {/* 分隔線 */}
         <div className="mx-auto my-16 md:my-20 max-w-3xl border-t border-[#E7E0D8]" />
-        
+
         {/* 素描作品 */}
-        <div className="mt-20 md:mt-24">
+        <div>
           <h2 className="text-4xl md:text-5xl font-black text-center">
             素描作品
           </h2>
@@ -135,6 +135,46 @@ export default function StudentWorks() {
             <Image
               src="/images/courses/sketch 03.jpg"
               alt="素描作品三"
+              width={700}
+              height={500}
+              className="w-full h-64 md:h-80 rounded-3xl object-cover"
+            />
+          </div>
+        </div>
+
+        {/* 分隔線 */}
+        <div className="mx-auto my-16 md:my-20 max-w-3xl border-t border-[#E7E0D8]" />
+
+        {/* 漫畫作品 */}
+        <div>
+          <h2 className="text-4xl md:text-5xl font-black text-center">
+            漫畫作品
+          </h2>
+
+          <p className="text-center text-slate-500 mt-5 text-lg md:text-xl">
+            以畫筆描繪故事，讓想像力化為生動的畫面。
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mt-10">
+            <Image
+              src="/images/courses/comic 01.jpg"
+              alt="漫畫作品一"
+              width={700}
+              height={500}
+              className="w-full h-64 md:h-80 rounded-3xl object-cover"
+            />
+
+            <Image
+              src="/images/courses/comic 02.jpg"
+              alt="漫畫作品二"
+              width={700}
+              height={500}
+              className="w-full h-64 md:h-80 rounded-3xl object-cover"
+            />
+
+            <Image
+              src="/images/courses/comic 03.jpg"
+              alt="漫畫作品三"
               width={700}
               height={500}
               className="w-full h-64 md:h-80 rounded-3xl object-cover"
