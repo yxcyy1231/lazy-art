@@ -81,7 +81,7 @@ export default async function HomeCourseSection() {
         {/* =========================
             黏土常態班
         ========================= */}
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto mt-20 max-w-4xl">
           <div className="rounded-[32px] border border-[#E7E0D8] bg-white px-6 py-12 text-center shadow-sm md:px-12 md:py-16">
 
             <p className="font-semibold uppercase tracking-[0.3em] text-[#8B1E2D]">
