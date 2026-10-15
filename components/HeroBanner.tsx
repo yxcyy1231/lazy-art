@@ -6,19 +6,27 @@ import Link from "next/link";
 const slides = [
   {
     image: "/images/clay-dessert-1.png",
-    label: "SEPTEMBER THEME",
+    label: "CLAY THEME",
     title: "🍰 甜點黏土",
-    text: "9/12（六）開始，把喜歡的甜點變成可愛的黏土作品。",
+    text: "把喜歡的甜點變成可愛的黏土作品。",
     buttonText: "查看課程",
     href: "/regular?day=週六&course=黏土&time=13:30#classes",
   },
   {
     image: "/images/watercolor-1.png",
     label: "CURRENT WORKSHOP",
-    title: "暑末水彩漫漫",
+    title: "水彩漫漫",
     text: "用水彩畫下建築與風景，每堂 1.5 小時。",
     buttonText: "了解更多",
     href: "/course/watercolor",
+  },
+  {
+    image: "/images/courses /IMG_8180.JPG",
+    label: "CURRENT WORKSHOP",
+    title: "海洋生物黏土磁鐵",
+    text: "六週完成10款海洋生物，打造專屬海洋磁鐵畫板。",
+    buttonText: "了解更多",
+    href: "/course/clay",
   },
   {
     image: "/images/classroom/classroom1.jpg",
