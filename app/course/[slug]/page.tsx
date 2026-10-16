@@ -5,7 +5,7 @@ import { createClient } from "@supabase/supabase-js";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CourseScheduleList from "@/components/course/CourseScheduleList";
+import CourseCalendarPicker from "@/components/course/CourseCalendarPicker";
 import WatercolorCarousel from "@/components/WatercolorCarousel";
 
 const supabase = createClient(
@@ -35,44 +35,6 @@ export default async function Page({ params }: PageProps) {
 
   if (courseError || !course) {
     notFound();
-  }
-
-  /* =========================
-      台北時區今日日期
-  ========================= */
-
-  const today = new Intl.DateTimeFormat("en-CA", {
-    timeZone: "Asia/Taipei",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  }).format(new Date());
-
-  /* =========================
-      取得課程梯次
-  ========================= */
-
-  let scheduleQuery = supabase
-    .from("course_schedules")
-    .select("*")
-    .eq("course_id", course.id)
-    .eq("active", true);
-
-  // 海洋六週系列課允許開課後中途加入
-  if (course.slug !== "clay") {
-    scheduleQuery =
-      scheduleQuery.gte("class_date", today);
-  }
-
-  const {
-    data: schedules,
-    error: scheduleError,
-  } = await scheduleQuery.order("class_date", {
-    ascending: true,
-  });
-
-  if (scheduleError) {
-    console.error(scheduleError);
   }
 
   /* =========================
@@ -166,14 +128,6 @@ export default async function Page({ params }: PageProps) {
                     <div className="space-y-4 text-slate-700">
 
                       <div className="flex items-start gap-3">
-                        <span>📅</span>
-                        <span>
-                          8/29、9/5、9/12、9/19、9/26、
-                          10/3、10/10、10/17
-                        </span>
-                      </div>
-
-                      <div className="flex items-start gap-3">
                         <span>🕒</span>
                         <span>
                           每週六 15:10–16:40
@@ -219,14 +173,6 @@ export default async function Page({ params }: PageProps) {
                     </div>
 
                     <div className="space-y-4 text-slate-700">
-
-                      <div className="flex items-start gap-3">
-                        <span>📅</span>
-                        <span>
-                          8/30、9/6、9/13、9/20、9/27、
-                          10/4、10/11、10/18
-                        </span>
-                      </div>
 
                       <div className="flex items-start gap-3">
                         <span>🕒</span>
@@ -450,9 +396,7 @@ export default async function Page({ params }: PageProps) {
             id="schedule"
             className="mt-20"
           >
-            <CourseScheduleList
-              schedules={schedules ?? []}
-            />
+            <CourseCalendarPicker />
           </div>
 
         </section>
