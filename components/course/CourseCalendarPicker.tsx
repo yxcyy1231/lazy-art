@@ -18,7 +18,14 @@ function isSameDate(a: Date, b: Date) {
   );
 }
 
-export default function CourseCalendarPicker() {
+type Props = {
+  /** 哪幾天可以點選，0 = 週日 ... 6 = 週六。預設週六、週日都開放。 */
+  allowedWeekdays?: number[];
+};
+
+export default function CourseCalendarPicker({
+  allowedWeekdays = [0, 6],
+}: Props) {
   const today = startOfDay(new Date());
 
   const [visibleMonth, setVisibleMonth] = useState(
@@ -60,7 +67,12 @@ export default function CourseCalendarPicker() {
       </h2>
 
       <p className="mt-2 text-sm text-slate-500">
-        僅開放週六、週日，請點選日期後報名
+        僅開放{allowedWeekdays
+          .slice()
+          .sort()
+          .map((d) => `週${WEEKDAY_LABELS[d]}`)
+          .join("、")}
+        ，請點選日期後報名
       </p>
 
       {/* 月份切換 */}
@@ -103,9 +115,9 @@ export default function CourseCalendarPicker() {
           }
 
           const dayOfWeek = date.getDay();
-          const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+          const isAllowedDay = allowedWeekdays.includes(dayOfWeek);
           const isPast = date < today;
-          const isSelectable = isWeekend && !isPast;
+          const isSelectable = isAllowedDay && !isPast;
           const isSelected =
             selectedDate !== null && isSameDate(date, selectedDate);
 
