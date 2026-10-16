@@ -38,6 +38,44 @@ export default async function Page({ params }: PageProps) {
   }
 
   /* =========================
+      台北時區今日日期
+  ========================= */
+
+  const today = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Taipei",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+
+  /* =========================
+      取得課程梯次
+  ========================= */
+
+  let scheduleQuery = supabase
+    .from("course_schedules")
+    .select("*")
+    .eq("course_id", course.id)
+    .eq("active", true);
+
+  // 海洋六週系列課允許開課後中途加入
+  if (course.slug !== "clay") {
+    scheduleQuery =
+      scheduleQuery.gte("class_date", today);
+  }
+
+  const {
+    data: schedules,
+    error: scheduleError,
+  } = await scheduleQuery.order("class_date", {
+    ascending: true,
+  });
+
+  if (scheduleError) {
+    console.error(scheduleError);
+  }
+
+  /* =========================
       價格
   ========================= */
 
@@ -400,6 +438,7 @@ export default async function Page({ params }: PageProps) {
               allowedWeekdays={
                 course.slug === "clay" ? [0] : [0, 6]
               }
+              schedules={schedules ?? []}
             />
           </div>
 
