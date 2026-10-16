@@ -188,7 +188,7 @@ export default async function HomeCourseSection() {
                     {/* =========================
                         暑末水彩漫漫照片輪播
                     ========================= */}
-                    {course.title === "水彩漫漫" && (
+                    {course.title === "暑末水彩漫漫" && (
                       <WatercolorCarousel />
                     )}
 
