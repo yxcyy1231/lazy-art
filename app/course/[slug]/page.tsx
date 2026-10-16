@@ -95,7 +95,7 @@ export default async function Page({ params }: PageProps) {
           {/* 返回 */}
 
           <Link
-            href="/course"
+            href="/course-intro"
             className="mb-10 inline-flex items-center gap-2 font-semibold text-[#8B1E2D] hover:underline"
           >
             ← 返回所有課程
