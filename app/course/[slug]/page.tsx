@@ -396,7 +396,11 @@ export default async function Page({ params }: PageProps) {
             id="schedule"
             className="mt-20"
           >
-            <CourseCalendarPicker />
+            <CourseCalendarPicker
+              allowedWeekdays={
+                course.slug === "clay" ? [0] : [0, 6]
+              }
+            />
           </div>
 
         </section>
